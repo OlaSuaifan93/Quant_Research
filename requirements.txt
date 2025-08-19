@@ -1,0 +1,12 @@
+pandas
+numpy
+plotly
+nbformat
+statsmodels
+scikit-learn
+matplotlib
+pmdarima
+scipy
+dill
+flask
+#-e .

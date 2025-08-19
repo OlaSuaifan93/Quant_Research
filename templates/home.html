@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Gas Price</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Natural Gas Price Predictor</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="prediction">
+            <h2>Enter Date to Predict Price</h2>
+            <form id="predictForm" method="POST" action="/predictdata">
+                <label for="Date">Select Date:</label>
+                <input type="date" id="Date" name="Date" required>
+                <button type="submit">Predict</button>
+            </form>
+
+            {% if results %}
+            <div id="result" style="margin-top:20px; font-size:1.2em;">
+                Predicted Price on <strong>{{ request.form['Date'] }}</strong>: ${{ results }}
+            </div>
+            {% endif %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Natural Gas Price Predictor</p>
+    </footer>
+</body>
+</html>
+
